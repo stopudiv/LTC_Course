@@ -13,7 +13,7 @@ int main() {
    result = addition(x,y);
  
    printf("Addition of two number is: %d\n", result);
-   return (0);
+   return 0;
 }
 
 
