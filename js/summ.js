@@ -12,8 +12,7 @@ readline.question(`Enter two numbers:`, partition)
 
 function partition (stroka){
 	console.log(stroka);
-	let x = stroka.split(" ")[0];
-	let y = stroka.split(" ")[1];
+	let [x,y] = stroka.split(" ");
 	console.log(sum_js(x,y));
 	readline.close();
 }
