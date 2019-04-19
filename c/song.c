@@ -2,11 +2,16 @@
 
 int printsong(int count)
 {
-	if (count >0)
+	if (count > 1)
 	{
 	printf("%d bottle of beer on the wall, %d bottle of beer.\n", count, count);
 	printf("Take one down, pass it around, %d bottle of beer on the wall...\n", count-1);
 	printsong(count-1);
+}
+	else if (count == 1)
+{
+	printf("%d bottle of beer on the wall, %d bottle of beer.\n", count, count);
+	printsong(0);
 }
 	else
 {
