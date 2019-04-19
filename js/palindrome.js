@@ -5,17 +5,15 @@ function palindrome(string){
 	if (stringLength === 0 || stringLength ===1) {
 		return true;
 	}
-	if (string[0] == ',' || string[0] == '.' || string[0] == "'" || string[0] == '?' || string[0] == ' '){
+	else if (string[0] == "," || string[0] == "." || string[0] == "?" || string[0] == "#" || string[0] == "<" || string[0] == "'" || string[0] == " "){
 		if (string[1] === string[stringLength-1]){
 			return palindrome(string.slice(2, stringLength -1));
 		}
-		return false;
 	} 
-	else if (string[stringLength-1] == ',' || string[stringLength-1] == '.' || string[stringLength-1] == "'" || string[stringLength-1] =='?' || string[stringLength-1] == ' '){
+	else if (string[stringLength-1] == "," || string[stringLength-1] == "." || string[stringLength-1] =="?" || string[stringLength-1] == "#" || string[stringLength-1] =="<" || string[stringLength-1] == "'" || string[stringLength-1] == ' '){
 		if (string[0] === string[stringLength -2]){
-			return palindrome(string.slice(1, stringLength-1));
+			return palindrome(string.slice(1, stringLength-2));
 		}
-		return false;
 	}
 	else if (string[0] === string[stringLength -1]){
 		return palindrome(string.slice(1, stringLength-1));
