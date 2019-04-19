@@ -1,9 +1,17 @@
 function palindrome(string){
+console.log("["+string+"]");
 	let stringLength = string.length;
 	string = string.toLocaleLowerCase();
 	
 	if (stringLength === 0 || stringLength ===1) {
 		return true;
+	}
+ 	else if ((string[0] == "," || string[0] == "." || string[0] == "?" || string[0] == "#" || string[0] == "<" || string[0] == "'" || string[0] == " ")&&(string[stringLength-1] == "," || 
+string[stringLength-1] == "." || string[stringLength-1] =="?" || string[stringLength-1] == "#" || string[stringLength-1] =="<" || 
+string[stringLength-1] == "'" || string[stringLength-1] == " ")){
+	 	if (string[1] === string[stringLength-2]){
+			return palindrome(string.slice(2, stringLength-2));
+		}
 	}
 	else if (string[0] == "," || string[0] == "." || string[0] == "?" || string[0] == "#" || string[0] == "<" || string[0] == "'" || string[0] == " "){
 		if (string[1] === string[stringLength-1]){
