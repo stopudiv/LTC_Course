@@ -8,7 +8,7 @@ let count2 = 0;
 let count3 = 0;
 let re1 = /^.....$/g;
 let re2 = /^[a-z]+$/g;
-let re3 = /^[A-Z][a-z]+\d*[.!?\\-]*$/g;
+let re3 = /^[A-Z][a-z]+[0-9!?.,;\-]+$/g;
 
 
 lineReader.on('line', function (line){
