@@ -1,13 +1,23 @@
 #include <stdio.h>  
 #include <stdlib.h> 
 #include <string.h>
+
+int fsize(FILE *fp){
+    int prev=ftell(fp);
+    fseek(fp, 0L, SEEK_END);
+    int sz=ftell(fp);
+    fseek(fp,prev,SEEK_SET); //go back to where we were
+    return sz;
+}
   
 int main () {
 
 	FILE *fp;
-	char c [1024];
-	fp = fopen("um.um", "r");
-	fread(c, strlen(c) +1, 1, fp);
+	fp = fopen("um.um", "rb");
+
+	char *c= malloc(fsize(fp)); //[fsize(fp)];
+	//fp = fopen("um.um", "rb");
+	fread(c, fsize(fp), 1, fp);
 	printf("%s\n", c);
 	fclose(fp);
 
